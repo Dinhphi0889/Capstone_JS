@@ -1,0 +1,38 @@
+body{
+    background-image: url("../sass/img/bg.jpg");
+    background-size: cover;
+}
+.container{
+    margin-top: 300px;
+    a{
+        text-decoration: none;
+
+        i{
+            color: rgb(254, 254, 254);
+            font-size: 60px;
+            padding-bottom: 20px;
+            transition: .2s;
+        }&:hover{
+            i{
+                color: yellow;
+            }
+        }
+        h1{
+            font-size: 30px;
+            position: relative;
+            color: rgb(255, 255, 255);
+            // padding-bottom: 50px;
+            transition: .2s;
+        }&:hover{
+            h1{
+                color: yellow;
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        h1{
+            padding-bottom: 30px;
+        }
+        
+    }
+}   

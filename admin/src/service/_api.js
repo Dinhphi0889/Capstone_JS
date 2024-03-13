@@ -44,4 +44,11 @@ function Api() {
 
     }
 
+    this.requestImg = (url) =>{
+        return axios({
+            url: url,
+            method: "GET"
+        })
+    }
+
 }

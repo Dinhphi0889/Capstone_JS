@@ -14,6 +14,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../asset/css/style.css">
+    
 
 </head>
 
@@ -26,7 +27,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i>Home</a>
@@ -38,6 +39,7 @@
             </div>
         </nav>
     </div>
+    <img src="../asset/img/" alt="">
     <ul class="container nav nav-tabs" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" href="#DanhSachSP" role="tab" data-toggle="tab">Danh sách sản phẩm</a>
@@ -58,7 +60,8 @@
                         <input id="value-search" type="text" class="form-control" placeholder="Nhập từ khóa"
                             aria-label="Recipient's username" aria-describedby="basic-addon2" />
                         <div class="input-group-append">
-                            <button class="input-group-text" id="basic-addon2"type=""><i class="fa fa-search" onclick="searchProduct()"></i></button>
+                            <button class="btn btn-success " id="basic-addon2" type=""><i class="fa fa-search"
+                                    onclick="searchProduct()"></i></button>
                         </div>
                     </div>
                 </div>
@@ -80,9 +83,7 @@
                     <tbody id="tblDanhSachSP">
                     </tbody>
                 </table>
-                <form>
-                    <label style="width: 100%; height: 30px; display: block;" id="txtThongBao"></label>
-                </form>
+                <h2 id="txtThongBao">Không Tìm Thấy Sản Phẩm</h2>
                 <div class="loader"></div>
             </div>
             <br />
@@ -101,30 +102,42 @@
                     <div class="form-group">
                         <label class="modal-label">Tên Điện Thoại</label>
                         <input id="TenSP" class="form-control" placeholder="Nhập vào tên điện thoại" />
+                        <span id="spanTenSP" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Màn Hình</label>
                         <input id="manHinh" class="form-control" placeholder="Nhập vào màn hình" />
+                        <span id="spanManHinh" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Camera Sau</label>
                         <input id="camSau" class="form-control" placeholder="Nhập vào Camera Sau" />
+                        <span id="spanBackCam" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Camera Trước</label>
                         <input id="camTruoc" class="form-control" placeholder="Nhập vào Camera Trước" />
+                        <span id="spanFrontCam" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Giá</label>
                         <input id="giaSP" class="form-control" placeholder="Nhập vào giá" />
+                        <span id="spanGiaSP" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Hình Ảnh</label>
                         <input id="HinhSP" class="form-control" placeholder="Nhập vào hình ảnh sản phẩm" />
+                        <span id="spanHinhAnh" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Loại Điện Thoại</label>
                         <input id="loaiDT" class="form-control" placeholder="Nhập vào loại điện thoại" />
+                        <span id="spanLoaiDT" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
                         <label class="modal-label">Mô Tả</label>
@@ -155,8 +168,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- JS -->
-    <script src="./src/model/product.js"></script>
-    <script src="./src/service/api.js"></script>
+    <script src="./src/model/_product.js"></script>
+    <script src="./src/service/_api.js"></script>
+    <script src="./src/validation/_validation.js"></script>
     <script src="./src/controller/_homePage.js"></script>
 </body>
 

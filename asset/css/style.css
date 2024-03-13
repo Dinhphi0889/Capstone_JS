@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.btn:focus, .btn-success:focus {
+  box-shadow: none !important;
+}
+
 #home-page {
   background-image: url("../sass/img/bg.jpg");
   background-size: cover;
@@ -65,6 +69,10 @@
 #admin-page #myModal .modal-label {
   font-size: 20px;
   margin-bottom: 0;
+}
+
+#txtThongBao {
+  display: none;
 }
 
 /* HTML: <div class="loader"></div> */

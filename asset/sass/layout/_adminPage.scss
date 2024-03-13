@@ -38,6 +38,10 @@
     }
 }
 
+#txtThongBao {
+    display: none;
+}
+
 /* HTML: <div class="loader"></div> */
 
 .loader {
@@ -48,6 +52,7 @@
     position: relative;
     animation: rotate 1s linear infinite
 }
+
 .loader::before,
 .loader::after {
     content: "";

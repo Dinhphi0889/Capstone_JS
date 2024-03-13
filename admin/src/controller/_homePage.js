@@ -1,4 +1,5 @@
 const api = new Api();
+const validation = new Validation();
 
 getEle = (id) => document.getElementById(id);
 
@@ -17,7 +18,7 @@ getListData();
 
 getEle("btnThemSP").onclick = function () {
     document.getElementsByClassName("modal-title")[0].innerHTML = "Add Product";
-    const btnAdd = `<button class="btn btn-success" onclick ="addProduct()">Thêm</button>`
+    const btnAdd = `<button class="btn btn-success" onclick ="addProduct(true)">Thêm</button>`
     document.getElementsByClassName("modal-footer")[0].innerHTML = btnAdd;
 }
 
@@ -48,7 +49,7 @@ function renderUI(data) {
     getEle("tblDanhSachSP").innerHTML = content;
 }
 
-function addProduct() {
+function addProduct(isAdd) {
     const name = getEle("TenSP").value;
     const screen = getEle("manHinh").value;
     const backCam = getEle("camSau").value;
@@ -57,6 +58,40 @@ function addProduct() {
     const img = getEle("HinhSP").value;
     const type = getEle("loaiDT").value;
     const desc = getEle("MoTa").value;
+
+
+    // Validation Giá Sp
+    let isValid = true;
+    if (isAdd) {
+        isValid &= validation.kiemTraRong(price, "spanGiaSP", "(*) Không Được Để Trống") && validation.KiemTraSo(price, "spanGiaSP", "(*) Giá sản phẩm phải là số");
+    }    
+
+
+    // Validation Tên SP
+    isValid &= validation.kiemTraRong(name, "spanTenSP", "(*) Không Được Để Trống")
+
+
+    // Validation Màn Hình
+    isValid &= validation.kiemTraRong(screen, "spanManHinh", "(*) Không Được Để Trống")
+
+
+    // Validation Hình ảnh
+    isValid &=  validation.kiemTraRong(img, "spanHinhAnh", "(*) Không Được Để Rỗng");
+
+    // Validation BackCam
+    isValid &= validation.kiemTraRong(backCam, "spanBackCam", "(*) Không Được Để Trống");
+
+
+    // Validation FrontCam
+    isValid &= validation.kiemTraRong(frontCam, "spanFrontCam", "(*) Không Được Để Trống");
+
+
+    // Validation Loại Điện Thoại
+    isValid &= validation.kiemTraRong(type, "spanLoaiDT", "(*) Không Được Để Trống");
+    if (!isValid) return null;
+
+        
+
 
     const product = new Product("", name, screen, backCam, frontCam, price, img, desc, type);
 
@@ -71,6 +106,8 @@ function addProduct() {
         })
 }
 
+
+// Xóa Sản Phẩm
 function delProduct(id) {
     const promise = api.delete(id);
     promise
@@ -82,6 +119,8 @@ function delProduct(id) {
         })
 }
 
+
+// Sửa Sản Phẩm
 function editProduct(id) {
     document.getElementsByClassName("modal-title")[0].innerHTML = "Update Product";
     const btnUpdate = `<button class="btn btn-success" onclick="updateProduct(${id})">Update</button>`;
@@ -104,6 +143,8 @@ function editProduct(id) {
         })
 }
 
+
+// Cập nhập sản phẩm
 function updateProduct(id) {
     const name = getEle("TenSP").value;
     const screen = getEle("manHinh").value;
@@ -124,10 +165,10 @@ function updateProduct(id) {
         })
 }
 
-async function searchProduct() {
-    // document.querySelector(".loader").style.display = 'block'
-    let search = getEle("value-search").value;
 
+// Tìm kiếm sản phẩm theo tên
+async function searchProduct() {
+    let search = getEle("value-search").value;
     search = search.toLowerCase();
     try {
         const product = await api.fetchData();
@@ -135,16 +176,19 @@ async function searchProduct() {
         console.log(searchResult)
         if (searchResult.length > 0) {
             renderUI(searchResult)
+            getEle("txtThongBao").style.display = 'none'
+            document.querySelector(".loader").style.display = 'none'
         }
         else {
             renderUI(searchResult)
-            document.getEle("txtThongBao").innerHTML = "Không Tìm Thấy Sản Phẩm"
+            getEle("txtThongBao").style.display = 'block'
         }
     } catch {
         // console.log("API Error");
     }
 }
 function searchProductByName(product, search) {
+
     const products = product.data;
     const newProducts = [];
 

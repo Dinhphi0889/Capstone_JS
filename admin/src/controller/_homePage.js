@@ -64,7 +64,7 @@ function addProduct(isAdd) {
     let isValid = true;
     if (isAdd) {
         isValid &= validation.kiemTraRong(price, "spanGiaSP", "(*) Không Được Để Trống") && validation.KiemTraSo(price, "spanGiaSP", "(*) Giá sản phẩm phải là số");
-    }    
+    }
 
 
     // Validation Tên SP
@@ -76,7 +76,7 @@ function addProduct(isAdd) {
 
 
     // Validation Hình ảnh
-    isValid &=  validation.kiemTraRong(img, "spanHinhAnh", "(*) Không Được Để Rỗng");
+    isValid &= validation.kiemTraRong(img, "spanHinhAnh", "(*) Không Được Để Rỗng");
 
     // Validation BackCam
     isValid &= validation.kiemTraRong(backCam, "spanBackCam", "(*) Không Được Để Trống");
@@ -90,10 +90,10 @@ function addProduct(isAdd) {
     isValid &= validation.kiemTraRong(type, "spanLoaiDT", "(*) Không Được Để Trống");
     if (!isValid) return null;
 
-        
 
 
-    const product = new Product("", name, screen, backCam, frontCam, price, img, desc, type);
+
+    const product = new Product("", name, screen, backCam, frontCam, Number(price), img, desc, type);
 
     const promise = api.add(product)
     promise
@@ -155,7 +155,7 @@ function updateProduct(id) {
     const type = getEle("loaiDT").value;
     const desc = getEle("MoTa").value;
 
-    const product = new Product(id, name, price, screen, backCamera, frontCamera, img, desc, type)
+    const product = new Product(id, name, Number(price), screen, backCamera, frontCamera, img, desc, type)
 
     const promise = api.updateProduct(product)
     promise
@@ -177,7 +177,7 @@ async function searchProduct() {
         if (searchResult.length > 0) {
             renderUI(searchResult)
             getEle("txtThongBao").style.display = 'none'
-            document.querySelector(".loader").style.display = 'none'
+            // document.querySelector(".loader").style.display = 'none'
         }
         else {
             renderUI(searchResult)
@@ -187,6 +187,8 @@ async function searchProduct() {
         // console.log("API Error");
     }
 }
+
+//Tìm Kiếm Sản Phẩm
 function searchProductByName(product, search) {
 
     const products = product.data;
@@ -206,5 +208,25 @@ function searchProductByName(product, search) {
 
 }
 
+//Sắp xếp theo giá tiền
+document.getElementById("sapXep").addEventListener('change', () => {
+    let newArr = [];
+    api.fetchData()
+        .then((result) => {
+            const data = result.data
+            data.forEach((product, index) => {
+                let Arr = product.price;
+                Arr.sort((a, b) => a - b)
+                // newArr.sort()
 
-
+                // let price = product.price[index]
+                // newArr.push(price)
+                // newArr.sort()
+                console.log(Arr)
+                return Arr;
+            });
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+})

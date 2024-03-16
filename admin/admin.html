@@ -11,10 +11,14 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Font Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../asset/css/style.css">
-    
+    <link rel="stylesheet" href="./../css/style.css">
+
 
 </head>
 
@@ -49,13 +53,18 @@
     <div class="container tab-content">
         <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
             <div class="row">
-                <div class="col-md-8">
+                <div class="mr-3">
                     <button id="btnThemSP" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-plus mr-1"></i>
                         Thêm Mới
                     </button>
                 </div>
-                <div class="col-md-4">
+                <select name="phone" id="sapXep">
+                    <option value="all">Sắp xếp</option>
+                    <option value="1">Từ Thấp Đến Cao</option>
+                    <option value="2">Từ Cao Đến Thấp</option>
+                </select>
+                <div class="col-md-4 mt-3">
                     <div class="input-group mb-3">
                         <input id="value-search" type="text" class="form-control" placeholder="Nhập từ khóa"
                             aria-label="Recipient's username" aria-describedby="basic-addon2" />

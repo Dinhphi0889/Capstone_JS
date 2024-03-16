@@ -43,40 +43,53 @@
   }
 }
 
+#admin-page {
+  font-family: "Ubuntu", sans-serif;
+  /* HTML: <div class="loader"></div> */
+}
 #admin-page .navbar {
   margin-bottom: 30px;
   border-bottom: 2px solid;
 }
 #admin-page .navbar #title-adminPage {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 30px;
-  background: linear-gradient(to right, #0CC3CF 18%, #CF0DA9 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
+  animation: animate 3s infinite alternate;
 }
 #admin-page .navbar .icon-tittle {
   font-size: 40px;
 }
+#admin-page .navbar ul {
+  margin: 0 30px;
+}
 #admin-page .navbar ul li a {
   display: flex;
+  margin-left: 30px;
   flex-direction: column;
   align-items: center;
-  margin: 0 80px;
-  font-weight: 500;
   font-size: 20px;
+  transition: 0.3s;
 }
-#admin-page #myModal .modal-label {
+#admin-page .navbar ul li a:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 5px rgba(25, 74, 197, 0.6);
+  color: rgb(26, 207, 89) !important;
+}
+#admin-page .row {
+  align-items: center;
+  margin-left: 0;
+}
+#admin-page .tab-pane select #SapXep {
+  padding-left: 30px;
+}
+#admin-page .tab-pane #myModal .modal-label {
   font-size: 20px;
   margin-bottom: 0;
 }
-
-#txtThongBao {
+#admin-page #txtThongBao {
   display: none;
 }
-
-/* HTML: <div class="loader"></div> */
-.loader {
+#admin-page .loader {
   display: block;
   width: 48px;
   height: 48px;
@@ -84,9 +97,8 @@
   position: relative;
   animation: rotate 1s linear infinite;
 }
-
-.loader::before,
-.loader::after {
+#admin-page .loader::before,
+#admin-page .loader::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -95,13 +107,11 @@
   border: 5px solid #0f0a0a;
   animation: prixClipFix 2s linear infinite;
 }
-
-.loader::after {
+#admin-page .loader::after {
   inset: 8px;
   transform: rotate3d(90, 90, 0, 180deg);
   border-color: #FF3D00;
 }
-
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -120,4 +130,24 @@
   75%, 100% {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
+}
+@keyframes animate {
+  0% {
+    color: #8cde34;
+  }
+  50% {
+    color: #b7d425;
+  }
+  100% {
+    color: rgb(238, 166, 21);
+  }
+}
+#admin-page table {
+  text-align: center;
+}
+#admin-page table tr th {
+  color: rgb(227, 201, 34);
+}
+#admin-page tbody tr td:nth-child(9) {
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

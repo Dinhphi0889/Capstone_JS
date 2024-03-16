@@ -1,5 +1,6 @@
 #admin-page {
     font-family: "Ubuntu", sans-serif;
+    background-color: white !important;
 
     .navbar {
         margin-bottom: $mg-3;
@@ -43,7 +44,8 @@
             }
         }
     }
-    .row{
+
+    .row {
         align-items: center;
         margin-left: 0;
     }
@@ -128,7 +130,7 @@
         }
 
         50% {
-            color: #b7d425 ;
+            color: #b7d425;
         }
 
         100% {

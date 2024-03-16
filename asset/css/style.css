@@ -9,7 +9,7 @@
 }
 
 #home-page {
-  background-image: url("../sass/img/bg.jpg");
+  background-image: url("./../img/bg.jpg");
   background-size: cover;
 }
 
@@ -45,6 +45,7 @@
 
 #admin-page {
   font-family: "Ubuntu", sans-serif;
+  background-color: white !important;
   /* HTML: <div class="loader"></div> */
 }
 #admin-page .navbar {

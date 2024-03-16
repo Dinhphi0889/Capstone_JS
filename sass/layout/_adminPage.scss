@@ -1,0 +1,157 @@
+#admin-page {
+    font-family: "Ubuntu", sans-serif;
+
+    .navbar {
+        margin-bottom: $mg-3;
+        border-bottom: 2px solid;
+
+        #title-adminPage {
+            font-weight: 500;
+            font-size: $fs-3;
+            // background: linear-gradient(to right, #0CC3CF 18%, #CF0DA9 100%);
+            // background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            // text-transform: uppercase;
+            animation: animate 3s infinite alternate;
+        }
+
+        .icon-tittle {
+            font-size: $fs-4;
+        }
+
+        ul {
+            margin: 0 30px;
+
+            li {
+                a {
+                    display: flex;
+                    margin-left: $mg-3;
+                    flex-direction: column;
+                    align-items: center;
+                    // font-weight: 500;
+                    font-size: $fs-2;
+                    transition: .3s;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        text-shadow: 0 0 5px rgba(25, 74, 197, 0.6);
+                        color: rgb(26, 207, 89) !important;
+                    }
+                }
+
+
+            }
+        }
+    }
+    .row{
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .tab-pane {
+        select {
+            #SapXep {
+                padding-left: 30px;
+            }
+        }
+
+        #myModal {
+            .modal-label {
+                font-size: $fs-2;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+
+    #txtThongBao {
+        display: none;
+    }
+
+    /* HTML: <div class="loader"></div> */
+
+    .loader {
+        display: block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite
+    }
+
+    .loader::before,
+    .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #0f0a0a;
+        animation: prixClipFix 2s linear infinite;
+    }
+
+    .loader::after {
+        inset: 8px;
+        transform: rotate3d(90, 90, 0, 180deg);
+        border-color: #FF3D00;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    @keyframes prixClipFix {
+        0% {
+            clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+        }
+
+        50% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+        }
+
+        75%,
+        100% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            color: #8cde34;
+        }
+
+        50% {
+            color: #b7d425 ;
+        }
+
+        100% {
+            color: rgb(238, 166, 21);
+        }
+    }
+
+    table {
+        text-align: center;
+
+        tr {
+            th {
+                color: rgb(227, 201, 34);
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td:nth-child(9) {
+                // color: ;
+                font-weight: bold;
+            }
+        }
+    }
+}

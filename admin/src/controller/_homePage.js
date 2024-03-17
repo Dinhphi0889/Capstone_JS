@@ -93,7 +93,7 @@ function addProduct(isAdd) {
 
 
 
-    const product = new Product("", name, screen, backCam, frontCam, Number(price), img, desc, type);
+    const product = new Product("", name, Number(price), screen, backCam, frontCam, img, desc, type);
 
     const promise = api.add(product)
     promise

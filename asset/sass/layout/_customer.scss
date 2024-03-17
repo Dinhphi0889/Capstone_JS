@@ -25,9 +25,17 @@
         .navbar-brand {
             margin-right: 5rem;
             font-weight: 600;
+            color: $color-white-3;
 
             i {
                 font-size: 30px;
+            }
+        }
+        .navbar-nav{
+            li{
+                a{
+                    color: $color-white-3;
+                }
             }
         }
 
@@ -46,6 +54,11 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        .row{
+            .col:first-of-type{
+                color: $color-white-3;
+            }
+        }
 
         button {
             background-color: rgb(206, 142, 5);
@@ -88,12 +101,16 @@
 
         .upper__footer {
             text-align: center;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid $color-white-3;
+            color: $color-white-3;
+            a{
+                color: $color-white-3;
+            }
         }
 
         .bottom__footer {
             padding: 20px;
-
+            color: $color-white-3;
             ul {
                 list-style: none;
 
@@ -101,7 +118,7 @@
                     margin: 10px 0;
 
                     a {
-                        color: white;
+                        color: $color-white-3;
                         text-decoration: underline;
                     }
                 }
@@ -118,7 +135,7 @@
                 a {
                     font-weight: bold;
                     font-size: 20px;
-                    color: white;
+                    color: $color-white-3;
                     text-decoration: underline;
                 }
             }

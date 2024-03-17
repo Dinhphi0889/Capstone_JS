@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.btn:focus, .btn-success:focus {
-  box-shadow: none !important;
-}
-
 #home-page {
   background-image: url("./../img/bg.jpg");
   background-size: cover;
@@ -48,24 +44,24 @@
   background-color: white !important;
   /* HTML: <div class="loader"></div> */
 }
+#admin-page a {
+  text-decoration: none;
+}
 #admin-page .navbar {
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   border-bottom: 2px solid;
 }
-#admin-page .navbar #title-adminPage {
+#admin-page .navbar #logoAdminPage {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 1.8rem;
   animation: animate 3s infinite alternate;
-}
-#admin-page .navbar .icon-tittle {
-  font-size: 40px;
 }
 #admin-page .navbar ul {
   margin: 0 30px;
 }
 #admin-page .navbar ul li a {
   display: flex;
-  margin-left: 30px;
+  margin-left: 70px;
   flex-direction: column;
   align-items: center;
   font-size: 20px;
@@ -84,7 +80,7 @@
   padding-left: 30px;
 }
 #admin-page .tab-pane #myModal .modal-label {
-  font-size: 20px;
+  font-size: 1.1rem;
   margin-bottom: 0;
 }
 #admin-page #txtThongBao {
@@ -151,4 +147,188 @@
 }
 #admin-page tbody tr td:nth-child(9) {
   font-weight: bold;
+}
+
+#customer-page p {
+  margin-bottom: 0 !important;
+  font-size: 18px;
+}
+#customer-page header {
+  background-color: rgba(0, 0, 0, 0.315);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+#customer-page header .nav-item {
+  text-align: center;
+}
+#customer-page header .nav-item i {
+  font-size: 30px;
+}
+#customer-page header .navbar-brand {
+  margin-right: 5rem;
+  font-weight: 600;
+  color: #fff;
+}
+#customer-page header .navbar-brand i {
+  font-size: 30px;
+}
+#customer-page header .navbar-nav li a {
+  color: #fff;
+}
+#customer-page .customer__carousel {
+  padding: 100px;
+  background-image: linear-gradient(rgba(255, 42, 0, 0.5), rgba(195, 0, 255, 0.5)), url("../../asset/img/banner.jpg");
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+#customer-page .customer__carousel .row .col:first-of-type {
+  color: #fff;
+}
+#customer-page .customer__carousel button {
+  background-color: rgb(206, 142, 5);
+  padding: 10px 20px;
+  border: 1px solid rgb(206, 142, 5);
+  border-radius: 2px;
+}
+#customer-page .customer__carousel .money {
+  margin: 40px 0;
+}
+#customer-page .product__customer {
+  padding: 50px;
+}
+#customer-page .product__customer .form-control {
+  margin-bottom: 50px;
+}
+#customer-page .product__customer .form-control option {
+  color: black;
+}
+#customer-page .product__customer .cardPhone__text {
+  font-size: 13px;
+  font-style: italic;
+}
+#customer-page .product__customer .cardPhone__rating .fa-star {
+  color: rgb(255, 200, 0);
+}
+#customer-page footer {
+  background-color: black;
+  background-image: linear-gradient(rgba(255, 42, 0, 0.9), rgba(195, 0, 255, 0.9));
+}
+#customer-page footer .upper__footer {
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+#customer-page footer .upper__footer a {
+  color: #fff;
+}
+#customer-page footer .bottom__footer {
+  padding: 20px;
+  color: #fff;
+}
+#customer-page footer .bottom__footer ul {
+  list-style: none;
+}
+#customer-page footer .bottom__footer ul li {
+  margin: 10px 0;
+}
+#customer-page footer .bottom__footer ul li a {
+  color: #fff;
+  text-decoration: underline;
+}
+#customer-page footer .end__footer {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.11);
+}
+#customer-page footer .end__footer p {
+  margin-bottom: 0;
+}
+#customer-page footer .end__footer p a {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cardPhone {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  background-color: #f5f9fe;
+  border: none;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.cardPhone img {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  border-radius: 8px;
+}
+.cardPhone .cardPhone__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1d365e;
+}
+.cardPhone .cardPhone__text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1d365e;
+}
+.cardPhone .cardPhone__rating {
+  color: #f9d412;
+}
+
+.btnPhone-white {
+  background: transparent;
+  padding: 13.5px 44px;
+  border: 2px solid #2a73dd;
+  border-radius: 8px;
+  letter-spacing: 0.03rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2a73dd;
+  box-shadow: 0 3px 6px #c9d8f4;
+  transition: 0.5s;
+}
+.btnPhone-white:hover {
+  background: #2a73dd;
+  border-color: #2a73dd;
+  color: #fff;
+}
+
+.btnPhone-blue {
+  background: linear-gradient(120deg, #60a4f4, #2a73dd);
+  padding: 15.5px 46px;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.03rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+}
+.btnPhone-blue:hover {
+  opacity: 0.75;
+}
+
+.btnPhone-shadow {
+  background: #f5f9fe;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.03rem;
+  font-size: 10px;
+  font-weight: 600;
+  color: #2a73dd;
+  box-shadow: 2px 2px 4px #e2ebfc, -2px -2px 4px #fff;
+  transition: 0.5s;
+}
+.btnPhone-shadow:hover {
+  box-shadow: inset 1px 1px 3px #e2ebfc, inset -2px -2px 5px #fff;
+}
+
+#exampleModal {
+  color: black;
+}
+#exampleModal .modal-content {
+  color: black;
 }/*# sourceMappingURL=style.css.map */

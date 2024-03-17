@@ -210,21 +210,19 @@ function searchProductByName(product, search) {
 
 //Sắp xếp theo giá tiền
 document.getElementById("sapXep").addEventListener('change', () => {
-    let newArr = [];
+    let check = document.getElementById("sapXep").value;
     api.fetchData()
         .then((result) => {
             const data = result.data
-            data.forEach((product, index) => {
-                let Arr = product.price;
-                Arr.sort((a, b) => a - b)
-                // newArr.sort()
-
-                // let price = product.price[index]
-                // newArr.push(price)
-                // newArr.sort()
-                console.log(Arr)
-                return Arr;
-            });
+            if(check === "1"){
+                data.sort((a, b) => a.price - b.price)
+                renderUI(data)
+            }else if(check === "2"){
+                data.sort((a,b)=> b.price - a.price)
+                renderUI(data)
+            }
+            else{
+            }
         })
         .catch((err) => {
             console.log(err)

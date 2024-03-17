@@ -21,7 +21,6 @@
 
         ul {
             margin: 0 30px;
-
             li {
                 a {
                     display: flex;
@@ -31,7 +30,7 @@
                     // font-weight: 500;
                     font-size: $fs-7;
                     transition: .3s;
-
+                    
                     &:hover {
                         transform: translateY(-3px);
                         text-shadow: 0 0 5px rgba(25, 74, 197, 0.6);

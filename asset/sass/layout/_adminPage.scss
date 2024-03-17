@@ -1,12 +1,15 @@
 #admin-page {
     font-family: "Ubuntu", sans-serif;
     background-color: white !important;
+    a{
+        text-decoration: none;
+    }
 
     .navbar {
         margin-bottom: $mg-3;
         border-bottom: 2px solid;
 
-        #title-adminPage {
+        #logoAdminPage {
             font-weight: 500;
             font-size: $fs-3;
             // background: linear-gradient(to right, #0CC3CF 18%, #CF0DA9 100%);
@@ -16,13 +19,8 @@
             animation: animate 3s infinite alternate;
         }
 
-        .icon-tittle {
-            font-size: $fs-4;
-        }
-
         ul {
             margin: 0 30px;
-
             li {
                 a {
                     display: flex;
@@ -30,9 +28,9 @@
                     flex-direction: column;
                     align-items: center;
                     // font-weight: 500;
-                    font-size: $fs-2;
+                    font-size: $fs-7;
                     transition: .3s;
-
+                    
                     &:hover {
                         transform: translateY(-3px);
                         text-shadow: 0 0 5px rgba(25, 74, 197, 0.6);

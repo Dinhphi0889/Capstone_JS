@@ -212,6 +212,9 @@
 #customer-page .product__customer .cardPhone__rating .fa-star {
   color: rgb(255, 200, 0);
 }
+#customer-page .product__customer #img-cart {
+  object-fit: cover;
+}
 #customer-page footer {
   background-color: black;
   background-image: linear-gradient(rgba(255, 42, 0, 0.9), rgba(195, 0, 255, 0.9));
@@ -326,15 +329,11 @@
   box-shadow: inset 1px 1px 3px #e2ebfc, inset -2px -2px 5px #fff;
 }
 
-.deletebtn {
-  border-radius: 5px;
-}
-
 .modal-dialog {
-  max-width: 700px !important;
+  max-width: 800px !important;
 }
 .modal-dialog img {
-  height: 80px;
+  height: 50px;
   object-fit: cover;
 }
 .modal-dialog .modal-content .modal-header {

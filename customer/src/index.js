@@ -158,24 +158,24 @@ function renderCart() {
         // console.log(totalAmount)
 
         // console.log(item.name)
-        cartContent += `<br>
-        <tr style = "margin-top = 10px">
-            <td>${item.name}</td>
-            <td><img src="${item.img}" alt="..."></td>
-            <td>$${item.price.toLocaleString()}</td>
-            <td>
-                <button onclick="updateQuantity(${item.id}, 'decrease')" type="button" class="btn btn-secondary">-</button>
+        cartContent += `
+        <tr>
+            <td class="align-middle">${item.name}</td>
+            <td class="align-middle"><img class="img-fluid" src="${item.img}" alt="..."></td>
+            <td class="align-middle">$${item.price.toLocaleString()}</td>
+            <td class="align-middle">
+                <button onclick="updateQuantity(${item.id}, 'decrease')" type="button" class="btn btn-secondary updateQuantity">-</button>
                 
                 <span>${item.quantity}</span>
                 
-                <button onclick="updateQuantity(${item.id}, 'increase')" type="button" class="btn btn-secondary">+</button>
+                <button onclick="updateQuantity(${item.id}, 'increase')" type="button" class="btn btn-secondary updateQuantity">+</button>
 
             </td>
-            <td>$${(subtotal).toLocaleString()}</td>
-            <td>
+            <td class="align-middle">$${(subtotal).toLocaleString()}</td>
+            <td class="align-middle">
                 <button onclick="deletaItem(${item.id})" type="button" class="btn btn-danger" ">Close</button>
             </td>
-        </tr></br>
+        </tr>
         `
     })
     document.getElementById("tbody-cart").innerHTML = cartContent;

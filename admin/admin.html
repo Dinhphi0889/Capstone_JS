@@ -10,15 +10,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Font Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="stylesheet" href="./../asset/css/style.css">
+
 
 </head>
 
 <body id="admin-page">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-robot"></i> Cyber Phone</a>
+            <a id="logoAdminPage" class="navbar-brand" href="#"><i class="fa-solid fa-robot"></i> Cyber Phone</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,6 +42,121 @@
             </div>
         </nav>
     </div>
+    <img src="../asset/img/" alt="">
+    <ul class="container nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" href="#DanhSachSP" role="tab" data-toggle="tab">Danh sách sản phẩm</a>
+        </li>
+    </ul>
+    <br />
+    <div class="container tab-content">
+        <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
+            <div class="row">
+                <div class="mr-3">
+                    <button id="btnThemSP" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                        <i class="fa fa-plus mr-1"></i>
+                        Thêm Mới
+                    </button>
+                </div>
+                <select name="phone" id="sapXep">
+                    <option value="all">Sắp xếp</option>
+                    <option value="1">Từ Thấp Đến Cao</option>
+                    <option value="2">Từ Cao Đến Thấp</option>
+                </select>
+                <div class="col-md-4 mt-3">
+                    <div class="input-group mb-3">
+                        <input id="value-search" type="text" class="form-control" placeholder="Nhập từ khóa"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                        <div class="input-group-append">
+                            <button class="btn btn-success " id="basic-addon2" type=""><i class="fa fa-search"
+                                    onclick="searchProduct()"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear-fix"></div>
+            <div class="tblSanPham" id="tblSanPham">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>STT</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Màn Hình</th>
+                        <th>Camera Trước</th>
+                        <th>Camera Sau</th>
+                        <th>Hình Ảnh</th>
+                        <th>Mô Tả</th>
+                        <th>Loại</th>
+                    </thead>
+                    <tbody id="tblDanhSachSP">
+                    </tbody>
+                </table>
+                <h2 id="txtThongBao">Không Tìm Thấy Sản Phẩm</h2>
+                <div class="loader"></div>
+            </div>
+            <br />
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="modal-label">Tên Điện Thoại</label>
+                        <input id="TenSP" class="form-control" placeholder="Nhập vào tên điện thoại" />
+                        <span id="spanTenSP" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Màn Hình</label>
+                        <input id="manHinh" class="form-control" placeholder="Nhập vào màn hình" />
+                        <span id="spanManHinh" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Camera Sau</label>
+                        <input id="camSau" class="form-control" placeholder="Nhập vào Camera Sau" />
+                        <span id="spanBackCam" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Camera Trước</label>
+                        <input id="camTruoc" class="form-control" placeholder="Nhập vào Camera Trước" />
+                        <span id="spanFrontCam" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Giá</label>
+                        <input id="giaSP" class="form-control" placeholder="Nhập vào giá" />
+                        <span id="spanGiaSP" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Hình Ảnh</label>
+                        <input id="HinhSP" class="form-control" placeholder="Nhập vào hình ảnh sản phẩm" />
+                        <span id="spanHinhAnh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Loại Điện Thoại</label>
+                        <input id="loaiDT" class="form-control" placeholder="Nhập vào loại điện thoại" />
+                        <span id="spanLoaiDT" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="modal-label">Mô Tả</label>
+                        <textarea class="form-control" name="" id="MoTa" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    </div>
 
 
     <!-- bs4 -->
@@ -47,6 +169,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <!-- axios -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- JS -->
+
+    
+    <script src="./src/model/_product.js"></script>
+    <script src="./src/service/_api.js"></script>
+    <script src="./src/validation/_validation.js"></script>
+    <script src="./src/controller/_homePage.js"></script>
 </body>
 
 </html>

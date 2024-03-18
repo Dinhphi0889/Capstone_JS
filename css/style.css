@@ -215,9 +215,37 @@
   box-shadow: inset 1px 1px 3px #e2ebfc, inset -2px -2px 5px #fff;
 }
 
-#exampleModal {
+.deletebtn {
+  border-radius: 5px;
+}
+
+.modal-dialog {
+  max-width: 700px !important;
+}
+.modal-dialog img {
+  height: 80px;
+  object-fit: cover;
+}
+.modal-dialog .modal-content .modal-header {
   color: black;
 }
-#exampleModal .modal-content {
+.modal-dialog .modal-content .modal-header span {
   color: black;
+}
+.modal-dialog .modal-content .modal-body {
+  text-align: center;
+}
+.modal-dialog .modal-content .modal-body th {
+  color: black;
+  background: gray;
+}
+.modal-dialog .modal-content .modal-body span {
+  color: black;
+}
+.modal-dialog .modal-content .modal-body td {
+  color: black;
+}
+.modal-dialog .modal-content .modal-body table {
+  width: 100%;
+  border-collapse: collapse;
 }/*# sourceMappingURL=style.css.map */

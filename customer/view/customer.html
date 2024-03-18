@@ -67,8 +67,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a id="btnCart" type="button" class="btn mb-3" data-toggle="modal"
-                            data-target="#exampleModal">
+                        <a id="btnCart" type="button" class="btn mb-3" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>Cart</p>
                         </a>
@@ -187,7 +186,6 @@
             </p>
         </div>
     </footer>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -198,45 +196,37 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body cart">
                     <form class="needs-validation" id="foodForm">
-                        <div class="row">
-                            <tr>
-                                <th>STT</th>
-                                <th>Type</th>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                            </tr>
-                            <tr id="tproduct">
-                                <td>1</td>
-                                <td>Samsung</td>
-                                <td>Samsung Galaxy M51</td>
-                                <td>Thiết kế đột phá, màn hình tuyệt đỉnh</td>
-                                <td>3500</td>
-                                <td>
-                                    <button>+</button>
-                                    <span>1</span>
-                                    <button>-</button>
-                                </td>
-                            </tr>
-                        </div>
-                        
-
-                        
+                        <table style="border: 1px, solid black;">
+                            <thead class=".bg-secondary">
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-cart" style="height: 100px;">
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr class=".bg-success text-dark">
+                                    <td style="font-weight: bold;" colspan="4">Tổng</td>
+                                    <td id="totalAmount" style="font-weight: bold;"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         Close
                     </button>
-                    <button type="button" class="btn btn-warning" id="btnCapNhat">
-                        Cập Nhật
-                    </button>
-                    <button type="button" class="btn btn-warning" id="btnThemMon">
-                        Thêm
+                    <button type="button" class="btn btn-warning" id="btnMua">
+                        Mua hàng
                     </button>
                 </div>
             </div>
@@ -259,10 +249,11 @@
         integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="../src/model/cart.js"></script>
+    <!-- <script src="../src/model/cart.js"></script> -->
     <script src="../src/model/product.js"></script>
     <script src="../src/service/api.js"></script>
     <script src="../src/index.js"></script>
+    <!-- <script src="../src/index1.js"></script> -->
 </body>
 
 </html>

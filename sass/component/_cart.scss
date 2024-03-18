@@ -1,0 +1,45 @@
+.modal-dialog {
+    max-width: 700px !important;
+    img {
+        height: 80px;
+        object-fit: cover;
+        // text-align: center;
+    }
+
+    .modal-content {
+        .modal-header {
+            color: black;
+
+            span {
+                color: black;
+            }
+        }
+
+        .modal-body {
+            text-align: center;
+
+            th {
+                color: black;
+                // border: 1px solid black;
+                background: gray;
+            }
+
+            span {
+                color: black;
+            }
+
+            td {
+                color: black;
+                // border: 1px solid black;
+
+            }
+
+            table {
+                width: 100%;
+                // border: 1px solid black;
+                border-collapse: collapse;
+
+            }
+        }
+    }
+}

@@ -31,9 +31,10 @@
                 font-size: 30px;
             }
         }
-        .navbar-nav{
-            li{
-                a{
+
+        .navbar-nav {
+            li {
+                a {
                     color: $color-white-3;
                 }
             }
@@ -54,8 +55,9 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        .row{
-            .col:first-of-type{
+
+        .row {
+            .col:first-of-type {
                 color: $color-white-3;
             }
         }
@@ -88,13 +90,13 @@
             font-style: italic;
         }
 
-        .cardPhone__rating{
-            .fa-star{
+        .cardPhone__rating {
+            .fa-star {
                 color: rgb(255, 200, 0);
             }
         }
 
-        #img-cart{
+        #img-cart {
             object-fit: cover;
         }
     }
@@ -107,7 +109,8 @@
             text-align: center;
             border-bottom: 1px solid $color-white-3;
             color: $color-white-3;
-            a{
+
+            a {
                 color: $color-white-3;
             }
         }
@@ -115,6 +118,7 @@
         .bottom__footer {
             padding: 20px;
             color: $color-white-3;
+
             ul {
                 list-style: none;
 

@@ -56,6 +56,12 @@
         }
 
         #myModal {
+            .modal-dialog{
+                .modal-content{
+                    align-items: flex-start;
+                    width: 200px !important;
+                }
+            }
             .modal-label {
                 font-size: $fs-2;
                 margin-bottom: 0;

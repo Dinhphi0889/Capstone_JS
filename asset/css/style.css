@@ -79,6 +79,10 @@
 #admin-page .tab-pane select #SapXep {
   padding-left: 30px;
 }
+#admin-page .tab-pane #myModal .modal-dialog .modal-content {
+  align-items: flex-start;
+  width: 200px !important;
+}
 #admin-page .tab-pane #myModal .modal-label {
   font-size: 1.1rem;
   margin-bottom: 0;
@@ -329,33 +333,33 @@
   box-shadow: inset 1px 1px 3px #e2ebfc, inset -2px -2px 5px #fff;
 }
 
-.modal-dialog {
+.modal-customer {
   max-width: 800px !important;
 }
-.modal-dialog img {
+.modal-customer img {
   height: 50px;
   object-fit: cover;
 }
-.modal-dialog .modal-content .modal-header {
+.modal-customer .modal-content .modal-header {
   color: black;
 }
-.modal-dialog .modal-content .modal-header span {
+.modal-customer .modal-content .modal-header span {
   color: black;
 }
-.modal-dialog .modal-content .modal-body {
+.modal-customer .modal-content .modal-body {
   text-align: center;
 }
-.modal-dialog .modal-content .modal-body th {
+.modal-customer .modal-content .modal-body th {
   color: black;
   background: gray;
 }
-.modal-dialog .modal-content .modal-body span {
+.modal-customer .modal-content .modal-body span {
   color: black;
 }
-.modal-dialog .modal-content .modal-body td {
+.modal-customer .modal-content .modal-body td {
   color: black;
 }
-.modal-dialog .modal-content .modal-body table {
+.modal-customer .modal-content .modal-body table {
   width: 100%;
   border-collapse: collapse;
 }/*# sourceMappingURL=style.css.map */
